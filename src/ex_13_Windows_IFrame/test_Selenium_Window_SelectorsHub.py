@@ -34,7 +34,9 @@ def test_verify_windows():
 
     # To switch back to previous frame - first shift to Parent frame and then to pact1
     driver.switch_to.default_content() # To parent frame
-    driver.switch_to.frame("pact1") # To pact1
+
+    # Again switching to iFrame pact1
+    driver.switch_to.frame("pact1")
 
     crush_finder_input_box= driver.find_element(By.XPATH, "//input[@id='inp_val']")
     crush_finder_input_box.clear()
