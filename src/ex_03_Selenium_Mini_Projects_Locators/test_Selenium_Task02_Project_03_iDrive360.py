@@ -53,8 +53,9 @@ def test_iDrive360():
     # Switching to iFrame
 
     # Wait until any Stripe iframe is present
+    # iframe = driver.find_element(By.XPATH, "//iframe[@title='Secure card payment input frame']")
     iframe = WebDriverWait(driver, 20).until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, "iframe[name^='__privateStripeFrame']"))
+        EC.presence_of_element_located((By.XPATH, "//iframe[@title='Secure card payment input frame']"))
     )
     driver.switch_to.frame(iframe)
 
